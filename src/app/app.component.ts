@@ -9,7 +9,7 @@ import { WeatherData } from './models/weather.model';
 })
 export class AppComponent {
 
-  hot:string ="assests/hot.jpg";
+  hot:string ="assests/hot.jpg"; 
   cold:string ="assests/cold.jpg";
   humidity:string ="assests/humidity.png";
   wind:string ="assests/wind.png";
