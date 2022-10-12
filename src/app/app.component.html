@@ -8,8 +8,8 @@
 <div class="bodyc"><div class="container" *ngIf="weatherData">
 
 <div class="upper-data">
-  <img src="../assets/hot.jpg" *ngIf=" weatherData.current_observation.condition.temperature > 15">
-  <img src="../assets/cold.jpg" *ngIf=" weatherData.current_observation.condition.temperature <= 15 ">
+  <img [src]="hot" *ngIf=" weatherData.current_observation.condition.temperature > 15">
+  <img [src]="cold" *ngIf=" weatherData.current_observation.condition.temperature <= 15 ">
 
   <div class="weather-data">
     <div class="location">{{weatherData.location.city}}</div>
@@ -23,28 +23,28 @@
   <div class="more-info-container">
     <div class="info-block">
       <div class="info-block-label">
-        <img src="../assets/sunrise.png">
+        <img [src]="sunrise">
         <span>Sun Rise</span>
       </div>
       <div class="info-block-value">{{weatherData.current_observation.astronomy.sunrise}}</div>
     </div>
     <div class="info-block">
       <div class="info-block-label">
-        <img src="../assets/sunset.png">
+        <img [src]="sunset">
         <span>Sun Set</span>
       </div>
       <div class="info-block-value">{{weatherData.current_observation.astronomy.sunset}}</div>
     </div>
     <div class="info-block">
       <div class="info-block-label">
-        <img src="../assets/humidity.png">
+        <img [src]="humidity">
         <span>humidity</span>
       </div>
       <div class="info-block-value">{{weatherData.current_observation.atmosphere.humidity}}%</div>
     </div>
     <div class="info-block">
       <div class="info-block-label">
-        <img src="../assets/wind.png">
+        <img [src]="wind">
         <span>wind</span>
       </div>
       <div class="info-block-value">{{weatherData.current_observation.wind.speed}} km/hr</div>

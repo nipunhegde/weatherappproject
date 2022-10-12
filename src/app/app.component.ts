@@ -8,6 +8,15 @@ import { WeatherData } from './models/weather.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  hot:string ="assests/hot.jpg";
+  cold:string ="assests/cold.jpg";
+  humidity:string ="assests/humidity.png";
+  wind:string ="assests/wind.png";
+  sunrise:string ="assests/sunrise.png";
+  sunset:string ="assests/sunset.png";
+
+
   constructor(private weatherService: WeatherService) {
 
   }
