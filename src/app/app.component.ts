@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { WeatherService } from './services/weather.service';
+import { WeatherData } from './models/weather.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'weatherappproject';
+  constructor(private weatherService: WeatherService) {
+
+  }
+  cityName:string='Wellington';
+  weatherData?:WeatherData;
+
+  ngOnInit(): void {
+    this.getWeatherData(this.cityName);
+    this.cityName = '';
+  }
+  onSubmit(){
+    this.getWeatherData(this.cityName);
+    this.cityName = '';
+
+  }
+  private getWeatherData(cityName:string){
+  this.weatherService.getWeatherData(cityName)
+     .subscribe({
+      next:(response)=>{
+        this.weatherData=response;
+        console.log(response);
+      }
+     });
+    }
 }
+
